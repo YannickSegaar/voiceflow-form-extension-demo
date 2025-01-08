@@ -23,12 +23,16 @@ git clone https://github.com/voiceflow-gallagan/voiceflow-form-extension-demo.gi
 cd voiceflow-form-extension-demo
 ```
 
-2. Start a local development server:
+2. Import the Renault-2025-01-08_17-28.vf agent to your workspace
+
+3. Update the `index.html` file with your Voiceflow project ID
+
+4. Start a local development server:
 ```bash
 npx serve
 ```
 
-3. Open your browser and navigate to:
+5. Open your browser and navigate to:
 ```
 http://localhost:3000
 ```
@@ -41,14 +45,15 @@ http://localhost:3000
 │   └── extensions.js       # Custom Voiceflow extensions
 ├── images/                 # Image assets
 └── styles/
-    └── widget.css         # Custom widget styling
+│   └── widget.css         # Custom widget styling
+└── Renault-2025-01-08_17-28.vf # Voiceflow agent
 ```
 
 ## Configuration
 
 The chat widget is configured in `index.html` with the following key settings:
 
-- Project ID: `677e761e051f29e11830fdb8`
+- Project ID: Your agent project ID
 - Runtime URL: `https://general-runtime.voiceflow.com`
 - Version: `development`
 
