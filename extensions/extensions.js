@@ -4,7 +4,7 @@ export const WaitingAnimationExtension = {
   name: 'WaitingAnimation',
   type: 'response',
   match: ({ trace }) =>
-    trace.payload?.name === 'ext_waitingAnimation',
+    trace.type === 'ext_waitingAnimation' || trace.payload?.name === 'ext_waitingAnimation',
   render: async ({ trace, element }) => {
     window.vf_done = true
     await new Promise((resolve) => setTimeout(resolve, 250))
@@ -100,7 +100,7 @@ export const DoneAnimationExtension = {
   name: 'DoneAnimation',
   type: 'response',
   match: ({ trace }) =>
-    trace.payload?.name === 'ext_doneAnimation',
+    trace.type === 'ext_doneAnimation' || trace.payload?.name === 'ext_doneAnimation',
   render: async ({ trace, element }) => {
     window.vf_done = true
     await new Promise((resolve) => setTimeout(resolve, 250))
@@ -115,7 +115,7 @@ export const DisableInputExtension = {
   name: 'DisableInput',
   type: 'effect',
   match: ({ trace }) =>
-    trace.payload?.name === 'ext_disableInput',
+    trace.type === 'ext_disableInput' || trace.payload?.name === 'ext_disableInput',
   effect: ({ trace }) => {
     const { isDisabled } = trace.payload
 
@@ -234,7 +234,7 @@ export const BookingExtension = {
   name: 'Booking',
   type: 'response',
   match: ({ trace }) =>
-    trace.payload?.name === 'ext_booking',
+    trace.type === 'ext_booking' || trace.payload?.name === 'ext_booking',
   render: ({ trace, element }) => {
     let currentScreen = 0
     let selectedLocation = ''
